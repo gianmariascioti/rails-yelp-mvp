@@ -1,0 +1,16 @@
+<h1><em>All Restaurants</em></h1>
+
+<div>
+
+  <ul style="list-style: none;">
+  <% @restaurants.each do |restaurant| %>
+    <li><%= link_to restaurant.name, restaurant_path(restaurant) %> |
+        <%= link_to " ✽ ", restaurant_path(restaurant), method: :delete %>
+    </li>
+  <% end %>
+  </ul>
+</div>
+
+<p>
+  <%= link_to "Admit a restaurant ☞",new_restaurant_path, class: "btn btn-primary" %>
+</p>
